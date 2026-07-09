@@ -1,4 +1,4 @@
-import "./DashboardShowcase.css";
+import "./DashboardShowCase.css";
 import dashboard from "../../assets/dashboard.png";
 
 import { FiGrid, FiBarChart2, FiCheckSquare, FiFileText } from "react-icons/fi";

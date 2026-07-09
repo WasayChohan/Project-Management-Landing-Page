@@ -1,0 +1,150 @@
+.dashboard-showcase {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 100px 0;
+}
+
+/* ================= Left ================= */
+
+.dashboard-content {
+  flex: 0.8;
+}
+
+.dashboard-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #ece9ff;
+  color: #6d5efc;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.dashboard-content h2 {
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  color: #111827;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.dashboard-content h2 span {
+  color: #6d5efc;
+}
+
+.dashboard-content p {
+  max-width: 450px;
+  color: #6b7280;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+/* ================= Sidebar List ================= */
+
+.dashboard-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.dashboard-item {
+  width: 230px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  color: #4b5563;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dashboard-item svg {
+  font-size: 18px;
+}
+
+.dashboard-item:hover {
+  background: #f5f3ff;
+  color: #6d5efc;
+}
+
+.dashboard-item.active {
+  background: #ece9ff;
+  color: #6d5efc;
+  font-weight: 600;
+}
+
+/* ================= Right Image ================= */
+
+.dashboard-image {
+  flex: 1.4;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dashboard-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 24px;
+
+  box-shadow:
+    0 30px 70px rgba(109, 94, 252, 0.18),
+    0 15px 35px rgba(0, 0, 0, 0.08);
+
+  transition: 0.35s ease;
+}
+
+.dashboard-image img:hover {
+  transform: translateY(-8px);
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 992px) {
+  .dashboard-showcase {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 60px;
+    padding: 80px 20px;
+  }
+
+  .dashboard-content {
+    flex: 1;
+  }
+
+  .dashboard-content p {
+    margin: 0 auto 35px;
+  }
+
+  .dashboard-list {
+    align-items: center;
+  }
+
+  .dashboard-item {
+    width: 260px;
+  }
+
+  .dashboard-image {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dashboard-image img {
+    width: 100%;
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-content h2 {
+    font-size: 2.3rem;
+  }
+
+  .dashboard-image img {
+    max-width: 100%;
+  }
+}

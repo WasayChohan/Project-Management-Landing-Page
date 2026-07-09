@@ -1,0 +1,213 @@
+.navber {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+.navber-logo img {
+  border-radius: 12px;
+}
+
+.navber-links {
+  display: flex;
+  gap: 40px;
+
+  padding: 0;
+  margin: 0;
+}
+
+.navber-links a {
+  color: #111827;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navber-links a:hover {
+  color: #6d5efc;
+}
+
+.navber-links li {
+  list-style-type: none;
+}
+
+.navber-buttons {
+  display: flex;
+  gap: 10px;
+}
+.btn-outline {
+  width: 110px;
+  height: 46px;
+  background: transparent;
+  border: 1px solid #d1d5db;
+  color: #111827;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btn-outline:hover {
+  background: #6d5efc;
+  color: #d1d5db;
+}
+
+.btn-primary {
+  width: 145px;
+  height: 46px;
+  background: #6d5efc;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #5b4cf5;
+}
+
+/* Mobile */
+
+/* Mobile */
+
+.menu-icon {
+  display: none;
+}
+
+/* ===========================
+   Laptop (1200px)
+=========================== */
+@media (max-width: 1200px) {
+  .navber {
+    padding: 0 30px;
+  }
+
+  .navber-links {
+    gap: 30px;
+  }
+
+  .btn-primary {
+    width: 130px;
+  }
+
+  .btn-outline {
+    width: 100px;
+  }
+}
+
+/* ===========================
+   Tablet (992px)
+=========================== */
+@media (max-width: 992px) {
+  .navber {
+    padding: 0 25px;
+    position: relative;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .navber-buttons {
+    display: none;
+  }
+
+  .navber-links {
+    display: none;
+  }
+
+  .navber-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    position: absolute;
+    top: 75px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 30px 0;
+
+    background: #fff;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* ===========================
+   Tablet (768px)
+=========================== */
+@media (max-width: 768px) {
+  .navber {
+    padding: 0 20px;
+  }
+
+  .navber-logo img {
+    width: 130px;
+  }
+
+  .menu-icon {
+    font-size: 26px;
+  }
+}
+
+/* ===========================
+   Mobile (576px)
+=========================== */
+@media (max-width: 576px) {
+  .navber {
+    padding: 0 15px;
+    margin-top: 15px;
+  }
+
+  .navber-logo img {
+    width: 120px;
+  }
+
+  .menu-icon {
+    font-size: 24px;
+  }
+
+  .navber-links.active {
+    gap: 20px;
+    padding: 25px 0;
+  }
+
+  .navber-links a {
+    font-size: 15px;
+  }
+}
+
+/* ===========================
+   Small Mobile (400px)
+=========================== */
+@media (max-width: 400px) {
+  .navber {
+    padding: 0 10px;
+  }
+
+  .navber-logo img {
+    width: 100px;
+  }
+
+  .menu-icon {
+    font-size: 22px;
+  }
+
+  .navber-links a {
+    font-size: 14px;
+  }
+}

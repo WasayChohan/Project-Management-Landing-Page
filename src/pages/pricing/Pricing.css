@@ -177,7 +177,7 @@
 
 @media (max-width: 768px) {
   .pricing {
-    padding: 70px 20px;
+    padding: 70px 0; /* Removed 20px */
   }
 
   .pricing-card {
@@ -196,7 +196,7 @@
 
 @media (max-width: 576px) {
   .pricing {
-    padding: 60px 15px;
+    padding: 60px 0; /* Removed 15px */
   }
 
   .pricing-card {

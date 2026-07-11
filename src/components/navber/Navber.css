@@ -86,10 +86,6 @@
    Laptop (1200px)
 =========================== */
 @media (max-width: 1200px) {
-  .navber {
-    padding: 0 30px;
-  }
-
   .navber-links {
     gap: 30px;
   }
@@ -108,7 +104,6 @@
 =========================== */
 @media (max-width: 992px) {
   .navber {
-    padding: 0 25px;
     position: relative;
   }
 
@@ -138,7 +133,6 @@
     left: 0;
 
     width: 100%;
-
     padding: 30px 0;
 
     background: #fff;
@@ -151,10 +145,6 @@
    Tablet (768px)
 =========================== */
 @media (max-width: 768px) {
-  .navber {
-    padding: 0 20px;
-  }
-
   .navber-logo img {
     width: 130px;
   }
@@ -169,7 +159,6 @@
 =========================== */
 @media (max-width: 576px) {
   .navber {
-    padding: 0 15px;
     margin-top: 15px;
   }
 
@@ -195,10 +184,6 @@
    Small Mobile (400px)
 =========================== */
 @media (max-width: 400px) {
-  .navber {
-    padding: 0 10px;
-  }
-
   .navber-logo img {
     width: 100px;
   }

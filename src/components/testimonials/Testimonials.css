@@ -223,7 +223,7 @@
 
 @media (max-width: 768px) {
   .testimonials {
-    padding: 80px 16px;
+    padding: 80px 0;
   }
 
   .testimonial-card {

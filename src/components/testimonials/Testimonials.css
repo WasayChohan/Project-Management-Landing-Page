@@ -50,12 +50,17 @@
 
 .swiper {
   flex: 1;
-  padding: 20px 12px 70px;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 10px 70px;
 }
 
 .swiper-slide {
   display: flex;
+  justify-content: center;
+  align-items: stretch;
   height: auto;
+  box-sizing: border-box;
 }
 
 /* ===========================
@@ -216,48 +221,27 @@
   background: #6d5efc;
 }
 
-/* ===========================
-      Responsive
-=========================== */
-
-@media (max-width: 1200px) {
-  .testimonial-card {
-    min-height: 330px;
-    padding: 35px;
-  }
-}
-
-@media (max-width: 992px) {
-  .testimonials {
-    padding: 90px 20px;
-  }
-
-  .testimonial-slider {
-    flex-direction: column;
-  }
-
-  .custom-prev,
-  .custom-next {
-    display: none;
-  }
-
-  .testimonial-card {
-    min-height: 320px;
-    padding: 35px;
-  }
-}
-
 @media (max-width: 768px) {
+  .testimonials {
+    padding: 80px 16px;
+  }
+
   .testimonial-card {
+    width: 100%;
     min-height: auto;
-    padding: 28px;
+    padding: 24px;
+  }
+
+  .review {
+    font-size: 15px;
   }
 
   .client {
     justify-content: flex-start;
   }
 
-  .review {
-    font-size: 15px;
+  .custom-prev,
+  .custom-next {
+    display: none;
   }
 }

@@ -71,17 +71,27 @@ const Testimonials = () => {
             disableOnInteraction: false,
           }}
           loop={true}
-          spaceBetween={25}
+          centeredSlides={false}
+          spaceBetween={20}
           slidesPerView={3}
           breakpoints={{
             0: {
               slidesPerView: 1,
+              spaceBetween: 15,
+              navigation: false,
+            },
+            576: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+              navigation: false,
             },
             768: {
               slidesPerView: 2,
+              spaceBetween: 20,
             },
-            1100: {
+            992: {
               slidesPerView: 3,
+              spaceBetween: 25,
             },
           }}
         >

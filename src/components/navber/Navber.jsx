@@ -6,6 +6,8 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const Navber = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <nav className="navber">
       {/* Logo */}
@@ -19,27 +21,48 @@ const Navber = () => {
       {/* Navigation Links */}
       <ul className={menuOpen ? "navber-links active" : "navber-links"}>
         <li>
-          <a href="#home">Home</a>
+          <a href="#home" onClick={closeMenu}>
+            Home
+          </a>
         </li>
 
         <li>
-          <a href="#features">Features</a>
+          <a href="#features" onClick={closeMenu}>
+            Features
+          </a>
         </li>
 
         <li>
-          <a href="#pricing">Pricing</a>
+          <a href="#pricing" onClick={closeMenu}>
+            Pricing
+          </a>
         </li>
 
         <li>
-          <a href="#about">About</a>
+          <a href="#about" onClick={closeMenu}>
+            About
+          </a>
         </li>
 
         <li>
-          <a href="#contact">Contact</a>
+          <a href="#contact" onClick={closeMenu}>
+            Contact
+          </a>
+        </li>
+
+        {/* Mobile Buttons */}
+        <li className="mobile-buttons">
+          <Link to="/login" className="btn btn-outline" onClick={closeMenu}>
+            Sign In
+          </Link>
+
+          <Link to="/signup" className="btn btn-primary" onClick={closeMenu}>
+            Get Started
+          </Link>
         </li>
       </ul>
 
-      {/* Buttons */}
+      {/* Desktop Buttons */}
       <div className="navber-buttons">
         <Link to="/login" className="btn btn-outline">
           Sign In
@@ -50,7 +73,7 @@ const Navber = () => {
         </Link>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Icon */}
       <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>

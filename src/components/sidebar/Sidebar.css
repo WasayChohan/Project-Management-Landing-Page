@@ -1,0 +1,111 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #ececec;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px;
+}
+
+/* Logo */
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.logo-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #6d5efc;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.logo-text h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.logo-text span {
+  color: #6d5efc;
+}
+
+/* Menu */
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 42px;
+  padding: 0 14px;
+  text-decoration: none;
+  color: #6b7280;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.25s;
+}
+
+.menu-item svg {
+  font-size: 18px;
+}
+
+.menu-item:hover {
+  background: #f5f3ff;
+  color: #6d5efc;
+}
+
+.menu-item.active {
+  background: #f3f0ff;
+  color: #6d5efc;
+}
+
+/* Upgrade */
+
+.upgrade-card {
+  padding: 18px;
+  border-radius: 14px;
+  background: #fff7ed;
+  text-align: center;
+}
+
+.upgrade-icon {
+  width: 42px;
+  height: 42px;
+  margin: auto;
+  border-radius: 50%;
+  background: #fde68a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d97706;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.upgrade-card h4 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.upgrade-card p {
+  font-size: 12px;
+  color: #6b7280;
+}

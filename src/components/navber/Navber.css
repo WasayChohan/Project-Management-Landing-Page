@@ -13,9 +13,12 @@
 .navber-links {
   display: flex;
   gap: 40px;
-
   padding: 0;
   margin: 0;
+}
+
+.navber-links li {
+  list-style: none;
 }
 
 .navber-links a {
@@ -31,14 +34,20 @@
   color: #6d5efc;
 }
 
-.navber-links li {
-  list-style-type: none;
-}
+/* Buttons */
 
 .navber-buttons {
   display: flex;
   gap: 10px;
 }
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
 .btn-outline {
   width: 110px;
   height: 46px;
@@ -54,7 +63,7 @@
 
 .btn-outline:hover {
   background: #6d5efc;
-  color: #d1d5db;
+  color: #fff;
 }
 
 .btn-primary {
@@ -62,8 +71,8 @@
   height: 46px;
   background: #6d5efc;
   color: white;
-  border: none;
   border-radius: 12px;
+  border: none;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
@@ -74,17 +83,16 @@
   background: #5b4cf5;
 }
 
-/* Mobile */
-
-/* Mobile */
+/* Mobile Menu Icon */
 
 .menu-icon {
   display: none;
 }
 
-/* ===========================
+/* ==========================
    Laptop (1200px)
-=========================== */
+========================== */
+
 @media (max-width: 1200px) {
   .navber-links {
     gap: 30px;
@@ -99,19 +107,16 @@
   }
 }
 
-/* ===========================
+/* ==========================
    Tablet (992px)
-=========================== */
-@media (max-width: 992px) {
-  .navber {
-    position: relative;
-  }
+========================== */
 
+@media (max-width: 992px) {
   .menu-icon {
     display: block;
     font-size: 28px;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 1001;
   }
 
   .navber-buttons {
@@ -135,15 +140,17 @@
     width: 100%;
     padding: 30px 0;
 
-    background: #fff;
+    background: white;
+    border-radius: 15px;
 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
   }
 }
 
-/* ===========================
+/* ==========================
    Tablet (768px)
-=========================== */
+========================== */
+
 @media (max-width: 768px) {
   .navber-logo img {
     width: 130px;
@@ -154,9 +161,10 @@
   }
 }
 
-/* ===========================
+/* ==========================
    Mobile (576px)
-=========================== */
+========================== */
+
 @media (max-width: 576px) {
   .navber {
     margin-top: 15px;
@@ -180,9 +188,10 @@
   }
 }
 
-/* ===========================
+/* ==========================
    Small Mobile (400px)
-=========================== */
+========================== */
+
 @media (max-width: 400px) {
   .navber-logo img {
     width: 100px;

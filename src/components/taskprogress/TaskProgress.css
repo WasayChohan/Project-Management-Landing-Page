@@ -1,0 +1,99 @@
+.task-progress-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid #eeeeff;
+  box-shadow: 0 4px 15px rgba(30, 20, 90, 0.04);
+  height: 100%;
+}
+
+.task-progress-card h3 {
+  margin: 0 0 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.task-progress-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+.progress-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-inner {
+  width: 92px;
+  height: 92px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-inner h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #111827;
+  font-weight: 700;
+}
+
+.progress-inner span {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.progress-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.legend {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.completed {
+  background: #6c63ff;
+}
+
+.pending {
+  background: #d8d2ff;
+}
+
+@media (max-width: 768px) {
+  .task-progress-content {
+    flex-direction: column;
+  }
+
+  .progress-circle {
+    width: 110px;
+    height: 110px;
+  }
+
+  .progress-inner {
+    width: 84px;
+    height: 84px;
+  }
+}

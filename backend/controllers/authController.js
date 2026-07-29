@@ -3,7 +3,7 @@
 // ==============================
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
-
+const generateToken = require("../utils/generateToken");
 // ==============================
 // Register User
 // POST /api/auth/register
@@ -78,9 +78,18 @@ const loginUser = async (req, res) => {
     }
 
     // Login successful
+    // ==============================
+    // Generate JWT Token
+    // ==============================
+    const token = generateToken(user._id);
+
+    // ==============================
+    // Send Success Response
+    // ==============================
     res.status(200).json({
       success: true,
       message: "Login successful",
+      token,
     });
   } catch (error) {
     // Handle server error

@@ -10,11 +10,56 @@ import {
 } from "react-icons/fi";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import axios from "axios";
 import "./Auth.css";
 
+// Show Password
 function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  // From Data
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  // Form Submission
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Handle Signup
+  const handleSignup = async (e) => {
+    e.preventDefault();
+
+    // Check if password match
+    if (formData.password !== formData.confirmPassword) {
+      alert("Password do not match");
+      return;
+    }
+
+    try {
+      // Send data to backend
+      const response = await axios.post(
+        "http://localhost:5000/api/auth/register",
+        {
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+        },
+      );
+
+      alert(response.data.message);
+    } catch (error) {
+      alert(error.response?.data?.message || "Something went wrong");
+    }
+  };
 
   return (
     <div className="auth-page">
@@ -42,13 +87,19 @@ function Signup() {
         </div>
 
         {/* Form */}
-        <form className="auth-form">
+        <form className="auth-form" onSubmit={handleSignup}>
           <div className="form-group">
             <label>Full Name</label>
 
             <div className="input-box">
               <FiUser className="input-icon" />
-              <input type="text" placeholder="Enter your full name" />
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your full name"
+                value={formData.name}
+                onChange={handleChange}
+              />
             </div>
           </div>
 
@@ -57,7 +108,13 @@ function Signup() {
 
             <div className="input-box">
               <FiMail className="input-icon" />
-              <input type="email" placeholder="Enter your email" />
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+              />
             </div>
           </div>
 
@@ -69,6 +126,9 @@ function Signup() {
 
               <input
                 type={showPassword ? "text" : "password"}
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
                 placeholder="Create a password"
               />
 
@@ -90,7 +150,10 @@ function Signup() {
 
               <input
                 type={showConfirmPassword ? "text" : "password"}
+                name="confirmPassword"
                 placeholder="Confirm your password"
+                value={formData.confirmPassword}
+                onChange={handleChange}
               />
 
               <button

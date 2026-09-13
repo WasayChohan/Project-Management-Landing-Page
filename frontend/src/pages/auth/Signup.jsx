@@ -10,7 +10,7 @@ import {
 } from "react-icons/fi";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import axios from "axios";
+import api from "../../api/axios";
 import "./Auth.css";
 
 // Show Password
@@ -46,14 +46,11 @@ function Signup() {
 
     try {
       // Send data to backend
-      const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
-        {
-          name: formData.name,
-          email: formData.email,
-          password: formData.password,
-        },
-      );
+      const response = await api.post("/auth/register", {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+      });
 
       alert(response.data.message);
     } catch (error) {

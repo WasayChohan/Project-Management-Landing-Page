@@ -83,16 +83,38 @@ const loginUser = async (req, res) => {
     // ==============================
     const token = generateToken(user._id);
 
-    // ==============================
+    // Send JWT as HTTP-Only Cookie
+
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7days
+    });
+
     // Send Success Response
-    // ==============================
     res.status(200).json({
       success: true,
       message: "Login successful",
-      token,
     });
   } catch (error) {
     // Handle server error
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+// Get Current Logged-in User
+// GET /api/auth/me
+const getMe = async (req, res) => {
+  try {
+    res.status(200).json({
+      success: true,
+      user: req.user,
+    });
+  } catch (error) {
     res.status(500).json({
       success: false,
       message: error.message,
@@ -106,4 +128,5 @@ const loginUser = async (req, res) => {
 module.exports = {
   registerUser,
   loginUser,
+  getMe,
 };

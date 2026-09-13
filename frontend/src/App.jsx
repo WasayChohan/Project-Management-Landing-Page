@@ -8,7 +8,7 @@ import "./App.css";
 import Login from "./pages/auth/Login.jsx";
 import Signup from "./pages/auth/Signup.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
-
+import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <div className="container">
@@ -20,7 +20,14 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </div>
   );

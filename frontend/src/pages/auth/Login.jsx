@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import api from "../../api/axios";
 import { FiArrowLeft, FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
@@ -8,6 +10,49 @@ import "./Auth.css";
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [remember, setRemember] = useState(false);
+
+  // React Router Navigation
+  const navigate = useNavigate();
+  // Form State
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  // Handle Input Change
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Handle Login
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Send login request to backend
+      const response = await api.post(
+        "/auth/login",
+        {
+          email: formData.email,
+          password: formData.password,
+        },
+        {
+          withCredentials: true, // Allow Cookies
+        },
+      );
+
+      alert(response.data.message);
+
+      // Redirect to Dashboard
+      navigate("/dashboard");
+    } catch (error) {
+      alert(error.response?.data?.message || "Something went wrong");
+    }
+  };
 
   return (
     <div className="auth-page">
@@ -38,14 +83,20 @@ function Login() {
 
         {/* Form */}
 
-        <form className="auth-form">
+        <form className="auth-form" onSubmit={handleLogin}>
           <div className="form-group">
             <label>Email Address</label>
 
             <div className="input-box">
               <FiMail className="input-icon" />
 
-              <input type="email" placeholder="Enter your email" />
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+              />
             </div>
           </div>
 
@@ -58,6 +109,9 @@ function Login() {
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter your password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
               />
 
               <button

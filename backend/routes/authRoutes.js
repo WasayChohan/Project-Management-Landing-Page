@@ -8,7 +8,11 @@ const protect = require("../middleware/authMiddleware");
 // ==============================
 // Import Controllers
 // ==============================
-const { registerUser, loginUser } = require("../controllers/authController");
+const {
+  registerUser,
+  loginUser,
+  getMe,
+} = require("../controllers/authController");
 
 // ==============================
 // Register Route
@@ -26,13 +30,7 @@ router.post("/login", loginUser);
 // Protected Route
 // GET /api/auth/profile
 // ==============================
-router.get("/profile", protect, (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: "Welcome to your profile",
-    user: req.user,
-  });
-});
+router.get("/me", protect, getMe);
 
 // ==============================
 // Export Router

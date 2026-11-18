@@ -1,6 +1,6 @@
 .dashboard {
   display: flex;
-  min-height: 101vh;
+  min-height: 100vh;
   background: #f5f7fb;
 }
 
